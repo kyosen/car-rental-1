@@ -21,7 +21,7 @@ app.CarCollectionView = Backbone.View.extend({
 	},
 	
 	events: {
-		'click #add': 'addCar'
+		'click #add': 'addCar',
 	},
 	
 	addCar: function(e) {
@@ -37,5 +37,4 @@ app.CarCollectionView = Backbone.View.extend({
 		
 		this.collection.add(new app.Car(formData));
 	},
-	
 });
