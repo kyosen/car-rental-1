@@ -23,6 +23,7 @@ app.CarCollectionView = Backbone.View.extend({
 	
 	events: {
 		'click #add': 'addCar',
+		'click #cars': 'render',
 	},
 	
 	addCar: function(e) {

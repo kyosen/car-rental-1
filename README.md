@@ -21,3 +21,7 @@ app.CarView = Backbone.View.extend({
 * 書籍のサンプルと同様に、views 下と models 下で、対応する javascript ファイル名を同じにしたが、Chrome の Console でデバッグする際にファイル名しか出ないので、どのファイルかの判別がしにくかった。
 
 * Collection のサブクラス名に "Collection"を含めたが、よかったのだろうか？アンチパターン？
+
+* Viewクラスはどの単位で作成すべきなのか？
+  たとえば、車登録画面と予約画面がありそれぞれで登録された車を表示する場合、
+  CarのViewクラスは分けるべき？一緒にすべき？
