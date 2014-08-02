@@ -20,10 +20,19 @@ app.CarCollectionView = Backbone.View.extend({
 		});
 		this.$el.append(carView.render().el);
 	},
+
+	renderReserve: function(){
+		console.log('‚â‚×');
+		var reservationView = new app.ReservationView({
+			model : new app.Reservation()
+		});
+		this.$el.append(reservationView.render().el);
+	},
 	
 	events: {
 		'click #add': 'addCar',
 		'click #cars': 'render',
+		'click .carContainer ul li .reserve': 'renderReserve',
 	},
 	
 	addCar: function(e) {

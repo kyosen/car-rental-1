@@ -4,32 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
 <title>カーレンタルシステム</title>
 <script type="text/template" id="carTemplate">
-<div class="carList">
-  <ul>
-    <li><%= carSpec %></li>
-    <li><%= maxNum %></li>
-    <li><%= charge %></li>
-    <li><button class="reserve">予約</button>
-  </ul>
-</div>  
+<ul>
+  <li><%= carSpec %></li>
+  <li><%= maxNum %></li>
+  <li><%= charge %></li>
+  <li><button class="reserve">予約</button>
+</ul>
 </script>
-<script type="text/template" id="reserveTemplate">
+<script type="text/template" id="reservationTemplate">
 <div>
- <form id="reserveDate" action="#">
+ <form id="reservationTerm" action="#">
    <div>
      レンタル日
-     <label for="year1">年：</label><input id="year1" type="text" />
-     <label for="month1">月：</label><input id="month1" type="text" />
-     <label for="day1">日：</label><input id="day1" type="text" />
+     <label for="startYear">年：</label><input id="startYear" type="text" value="<%= startYear %>" />
+     <label for="startMonth">月：</label><input id="startMonth" type="text" value="<%= startMonth %>" />
+     <label for="startDay">日：</label><input id="startDay" type="text" value="<%= startDay %>" />
    </div>
    <br />
    <div>
      返却日
-     <label for="year2">年：</label><input id="year2" type="text" />
-     <label for="month2">月：</label><input id="month2" type="text" />
-     <label for="day2">日：</label><input id="day2" type="text" />
+     <label for="endYear">年：</label><input id="endYear" type="text" value="<%= endYear %>" />
+     <label for="endMonth">月：</label><input id="endMonth" type="text" value="<%= endMonth %>"/>
+     <label for="endDay">日：</label><input id="endDay" type="text" value="<%= endDay %>"/>
    </div>
-   <button id="reserveComplete">予約</button>
+   <button id="completeReservation">予約</button>
  </form>
 </div>  
 </script>
@@ -45,6 +43,9 @@
 <script src="js/lib/backbone.localStorage-min.js"></script>
 <script src="js/models/car.js"></script>
 <script src="js/models/carCollection.js"></script>
+<script src="js/models/reservation.js"></script>
+<script src="js/models/reservationCollection.js"></script>
+<script src="js/views/reservation.js"></script>
 <script src="js/views/car.js"></script>
 <script src="js/views/carCollection.js"></script>
 <script src="js/app.js"></script>
