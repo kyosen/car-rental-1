@@ -5,4 +5,5 @@ app.Car = Backbone.Model.extend({
 		carSpec: '•s–¾',
 		maxNum : 0,
 		charge : 0
+	}
 });
