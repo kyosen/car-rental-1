@@ -5,6 +5,7 @@ app.CarCollectionView = Backbone.View.extend({
 	
 	initialize: function(initialCars){
 		this.collection = new app.CarCollection(initialCars);
+		this.listenTo(this.collection, 'add', this.renderCar);
 		this.render();
 	},
 	render: function(){
@@ -17,5 +18,24 @@ app.CarCollectionView = Backbone.View.extend({
 			model:item
 		});
 		this.$el.append(carView.render().el);
-	}
+	},
+	
+	events: {
+		'click #add': 'addCar'
+	},
+	
+	addCar: function(e) {
+		e.preventDefault();
+		
+		var formData = {};
+		
+		$('#addCar div').children('input').each(function(i, el){
+			if($(el).val() != ''){
+				formData[el.id] = $(el).val();
+			}
+		});
+		
+		this.collection.add(new app.Car(formData));
+	},
+	
 });
