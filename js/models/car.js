@@ -6,3 +6,4 @@ app.Car = Backbone.Model.extend({
 		maxNum : 0
 		charge : 0
 });
+// hensyuu
